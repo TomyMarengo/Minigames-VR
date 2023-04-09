@@ -13,5 +13,6 @@ public class PlayOnCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision other) {
 		GetComponent<AudioSource>().Play();
+		//audioSource.PlayOneShot(audioSource.clip);
 	} 
 }

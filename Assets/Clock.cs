@@ -19,9 +19,6 @@ public class Clock : MonoBehaviour
 		DateTime dtValue = DateTime.Now;
 		DateTime first = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
 		TimeSpan timeDifference = dtValue.Subtract(first);
-		Debug.Log(timeDifference.TotalSeconds);
-		Debug.Log(first);
-		Debug.Log(dtValue);
 
 		clock_hours.transform.Rotate((float)timeDifference.TotalSeconds/120f,0,0,Space.Self);
 		clock_minutes.transform.Rotate((float)timeDifference.TotalSeconds/10f,0,0,Space.Self);

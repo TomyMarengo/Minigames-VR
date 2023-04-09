@@ -24,7 +24,7 @@ public class OnTilt : MonoBehaviour
     private void Update()
     {
         CheckOrientation();
-    }
+	}
 
     private void CheckOrientation()
     {
@@ -36,7 +36,7 @@ public class OnTilt : MonoBehaviour
         if (withinThreshold != thresholdCheck)
         {
             withinThreshold = thresholdCheck;
-
+// && Math.Abs(this.transform.eulerAngles.z-90.0f)>0.3f && Math.Abs(this.transform.eulerAngles.z-270.0f)>0.3f
             if (withinThreshold)
             {
                 OnBegin.Invoke(this);
