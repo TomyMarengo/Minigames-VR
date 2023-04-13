@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 780148485043211473}
   - component: {fileID: 1341179423281742893}
   - component: {fileID: 3554489919239441069}
+  - component: {fileID: 532563208728060656}
   m_Layer: 0
   m_Name: Pin
   m_TagString: Untagged
@@ -258,6 +259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1341179423281742893}
+--- !u!114 &532563208728060656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182261586635610629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c285757510e05488f380db43fc99a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5239343756049276162
 GameObject:
   m_ObjectHideFlags: 0
