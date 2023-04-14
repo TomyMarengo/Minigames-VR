@@ -21,6 +21,12 @@ public class ScoreBoard : MonoBehaviour
         ShowMessage();
     }
 
+    public void ResetScore()
+    {
+        score = 0;
+        UpdateScore();
+    }
+
     public void UpdateScore()
     {
         ShowMessage();
