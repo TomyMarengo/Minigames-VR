@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26383835, g: 0.32624626, b: 0.38556248, a: 1}
+  m_IndirectSpecularColor: {r: 0.2638378, g: 0.32624567, b: 0.38556114, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5498,7 +5498,12 @@ PrefabInstance:
     - target: {fileID: 23529486246507954, guid: f11c2d91932d5fa46b9549ba2310b8f2,
         type: 3}
       propertyPath: m_PreserveUVs
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23529486246507954, guid: f11c2d91932d5fa46b9549ba2310b8f2,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11c2d91932d5fa46b9549ba2310b8f2, type: 3}
@@ -8948,6 +8953,11 @@ PrefabInstance:
       propertyPath: m_PreserveUVs
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23937196866941766, guid: f8295a404b82d654b819ad1407b8eb8f,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8295a404b82d654b819ad1407b8eb8f, type: 3}
 --- !u!4 &1377686460 stripped
@@ -11628,6 +11638,11 @@ PrefabInstance:
     - target: {fileID: 4974875474273596, guid: 2db486b6e9991e34a8137c5b02ea75fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 23055673102755156, guid: 2db486b6e9991e34a8137c5b02ea75fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23055673102755156, guid: 2db486b6e9991e34a8137c5b02ea75fa,
         type: 3}
