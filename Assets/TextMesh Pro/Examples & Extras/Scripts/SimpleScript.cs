@@ -54,5 +54,24 @@ namespace TMPro.Examples
             m_frame += 1 * Time.deltaTime;
         }
 
+        // on trigger circle collider, lift button pedestal component up
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Triggered");
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.Translate(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+                //gameObject.transform.position = new Vector3(0, 0.5f, 0);
+            }
+        }
+
     }
 }
