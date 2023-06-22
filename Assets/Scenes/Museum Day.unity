@@ -8719,6 +8719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23054248578497118, guid: 74595d96ab8fc1048a214e9741e02c73,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23054248578497118, guid: 74595d96ab8fc1048a214e9741e02c73,
+        type: 3}
       propertyPath: m_PreserveUVs
       value: 1
       objectReference: {fileID: 0}
@@ -8742,6 +8747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6100981fc9d384d9aa6974c23bc4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 899896432}
+  fadeSpeed: 0.5
 --- !u!135 &835491867
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9189,6 +9196,12 @@ Transform:
   m_Father: {fileID: 1915143242}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &899896432 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23054248578497118, guid: 74595d96ab8fc1048a214e9741e02c73,
+    type: 3}
+  m_PrefabInstance: {fileID: 835491864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &900475465
 GameObject:
   m_ObjectHideFlags: 0
