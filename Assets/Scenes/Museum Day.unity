@@ -8977,6 +8977,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 899896432}
   fadeSpeed: 0.5
+  darkLightmapDir:
+  - {fileID: 2800000, guid: ffa1d132dcd624440a8a47c55833edc6, type: 3}
+  - {fileID: 2800000, guid: 620d114a8c4bd3e42b156e7c62369b8f, type: 3}
+  - {fileID: 2800000, guid: b3cbd736bfa8b764fb0bbce8bb2a0541, type: 3}
+  - {fileID: 2800000, guid: f86a3082057377448b8b13f485f39564, type: 3}
+  - {fileID: 2800000, guid: ae5ad1e592fdd6d4dbc96695eef9c7ef, type: 3}
+  darkLightmapColor:
+  - {fileID: 2800000, guid: 79d2f0225de29944c93b0c82c67bb882, type: 3}
+  - {fileID: 2800000, guid: 665395e5e5b875041ad683cc3f71ad6a, type: 3}
+  - {fileID: 2800000, guid: db8a642ae819417409094567bb224b82, type: 3}
+  - {fileID: 2800000, guid: d79b292f5060a6548928318f3dcdb8b9, type: 3}
+  - {fileID: 2800000, guid: ebea4fbae40d3a74bac5c4944665d66b, type: 3}
+  brightLightmapDir:
+  - {fileID: 2800000, guid: ae549c32e973d924297bb9524e2a24a9, type: 3}
+  - {fileID: 2800000, guid: 6b05d7f28d9bb8347a6e956042e5e533, type: 3}
+  - {fileID: 2800000, guid: 0901afa8dd9f1574e8dc2ba150231eb5, type: 3}
+  - {fileID: 2800000, guid: c765bde411636d04b911a7d572cc0490, type: 3}
+  - {fileID: 2800000, guid: 4756c01efe9698f40bd08c1c894dc1d3, type: 3}
+  brightLightmapColor:
+  - {fileID: 2800000, guid: 97bad76aa131bb6468bd8c7923feea9c, type: 3}
+  - {fileID: 2800000, guid: 3a16451c2d911914ea29c4ba32a30363, type: 3}
+  - {fileID: 2800000, guid: 516c76a01f0c690419274a5e9399faf9, type: 3}
+  - {fileID: 2800000, guid: c063d8697f1051741aaefa1e66cc09b6, type: 3}
+  - {fileID: 2800000, guid: 92733302da490874e9f5cff07444e329, type: 3}
+  brightReflectionProbes:
+  - {fileID: 8900000, guid: 06f8e034777995048ba61ead98d13c81, type: 3}
+  - {fileID: 8900000, guid: 91a5e01d4c120b545b31e53ff0047d3b, type: 3}
+  - {fileID: 8900000, guid: 1939c3e57d1a7764082056efc2913787, type: 3}
+  darkReflectionProbes:
+  - {fileID: 8900000, guid: 5686a74963ddc2141acdbab8bf27c7f4, type: 3}
+  - {fileID: 8900000, guid: e4a34abe1a647884f975d943f0cc2bec, type: 3}
+  - {fileID: 8900000, guid: 59c3bee9059f6e34cbd2f0dac6baf912, type: 3}
 --- !u!135 &835491867
 SphereCollider:
   m_ObjectHideFlags: 0

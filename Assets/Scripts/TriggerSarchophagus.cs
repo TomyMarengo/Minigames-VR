@@ -11,6 +11,57 @@ public class TriggerSarchophagus : MonoBehaviour
     private bool hasInteracted = false;
     public float fadeSpeed = 1f;
 
+    public Texture2D[] darkLightmapDir, darkLightmapColor;
+    public Texture2D[] brightLightmapDir, brightLightmapColor;
+    public Cubemap[] brightReflectionProbes;
+    public Cubemap[] darkReflectionProbes;
+
+    private LightmapData[] darkLightmap, brightLightmap;
+
+    private void Start()
+    {
+        List<LightmapData> dlightmap = new List<LightmapData>();
+
+
+        for (int i = 0; i < darkLightmapDir.Length; i++)
+        {
+            LightmapData lmdata = new LightmapData();
+
+            lmdata.lightmapDir = darkLightmapDir[i];
+            lmdata.lightmapColor = darkLightmapColor[i];
+
+            dlightmap.Add(lmdata);
+        }
+
+        darkLightmap = dlightmap.ToArray();
+
+        List<LightmapData> blightmap = new List<LightmapData>();
+
+        for (int i = 0; i < brightLightmapDir.Length; i++)
+        {
+            LightmapData lmdata = new LightmapData();
+
+            lmdata.lightmapDir = brightLightmapDir[i];
+            lmdata.lightmapColor = brightLightmapColor[i];
+
+            blightmap.Add(lmdata);
+        }
+
+        brightLightmap = blightmap.ToArray();
+    }
+
+    private IEnumerator changeLightMap(LightmapData[] lightmapData, Cubemap[] probes)
+    {
+        LightmapSettings.lightmaps = lightmapData;
+        Cubemap[] reflectionProbes = FindObjectsOfType<Cubemap>();
+        for(int i = 0; i < probes.Length; i++)
+        {
+            Destroy(reflectionProbes[i]);
+            Instantiate(probes[i]);
+        }
+        yield return null;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +69,7 @@ public class TriggerSarchophagus : MonoBehaviour
         {
             Debug.Log("Player has interacted with the pedestal");
             StartCoroutine(fadeOut());
+            StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
             hasInteracted = true;
         }
     }
@@ -46,6 +98,7 @@ public class TriggerSarchophagus : MonoBehaviour
         {
             Debug.Log("Player has left the pedestal");
             StartCoroutine(fadeIn());
+            StartCoroutine(changeLightMap(brightLightmap, brightReflectionProbes));
             hasInteracted = false;
         }
     }
