@@ -17,7 +17,7 @@ public class TriggerSarchophagus : MonoBehaviour
 
     public Renderer rendererNew;
 
-    public AudioSource audioSource;
+    public AudioSource[] audioSource;
     public Cubemap[] brightReflectionProbes;
     public Cubemap[] darkReflectionProbes;
     public Cubemap[] singleReflectionProbes;
@@ -103,7 +103,10 @@ public class TriggerSarchophagus : MonoBehaviour
         if (!hasInteracted && other.CompareTag("Player"))
         {
             Debug.Log("Player has interacted with the pedestal");
-            audioSource.Play();
+            foreach(AudioSource audio in audioSource)
+            {
+                audio.Play();
+            }
             StartCoroutine(fadeOut(renderer));
             StartCoroutine(LiftPedestal());
             StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
@@ -157,7 +160,10 @@ public class TriggerSarchophagus : MonoBehaviour
         if (hasInteracted && other.CompareTag("Player"))
         {
             Debug.Log("Player has left the pedestal");
-            audioSource.Stop();
+            foreach (AudioSource audio in audioSource)
+            {
+                audio.Stop();
+            }
             StartCoroutine(fadeIn(renderer));
             StartCoroutine(ResetPedestal());
             StartCoroutine(changeLightMap(brightLightmap, brightReflectionProbes));
@@ -184,8 +190,8 @@ public class TriggerSarchophagus : MonoBehaviour
     private IEnumerator LiftPedestal()
     {
         float elapsedTime = 0f;
-        Vector3 startPosition = initialPosition.position;
-        Vector3 targetPosition = this.targetPosition.position;
+        Vector3 startPosition = initPos;
+        Vector3 targetPosition = targetPos;
 
         while (elapsedTime < liftingDuration)
         {
@@ -202,8 +208,8 @@ public class TriggerSarchophagus : MonoBehaviour
     private IEnumerator ResetPedestal()
     {
         float elapsedTime = 0f;
-        Vector3 startPosition = this.targetPos;
-        Vector3 targetPosition = this.initPos;
+        Vector3 startPosition = targetPos;
+        Vector3 targetPosition = initPos;
 
         while (elapsedTime < liftingDuration)
         {
