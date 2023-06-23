@@ -14,6 +14,9 @@ public class TriggerSarchophagus : MonoBehaviour
     public Texture2D[] darkLightmapDir, darkLightmapColor;
     public Texture2D[] brightLightmapDir, brightLightmapColor;
     public Texture2D[] singleLightmapDir, singleLightmapColor;
+
+    public Renderer rendererNew;
+
     public AudioSource audioSource;
     public Cubemap[] brightReflectionProbes;
     public Cubemap[] darkReflectionProbes;
@@ -25,10 +28,20 @@ public class TriggerSarchophagus : MonoBehaviour
 
     private LightmapData[] darkLightmap, brightLightmap, singleLightmap;
 
+    public GameObject pedestal;
+    public Transform initialPosition;
+    public Transform targetPosition;
+    public float liftingDuration = 2f;
+
+    private Vector3 initPos;
+    private Vector3 targetPos;
+
     private void Start()
     {
         List<LightmapData> dlightmap = new List<LightmapData>();
 
+        initPos = pedestal.transform.position;
+        targetPos = targetPosition.transform.position;
 
         for (int i = 0; i < darkLightmapDir.Length; i++)
         {
@@ -91,7 +104,8 @@ public class TriggerSarchophagus : MonoBehaviour
         {
             Debug.Log("Player has interacted with the pedestal");
             audioSource.Play();
-            StartCoroutine(fadeOut());
+            StartCoroutine(fadeOut(renderer));
+            StartCoroutine(LiftPedestal());
             StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
             hasInteracted = true;
         } 
@@ -120,16 +134,16 @@ public class TriggerSarchophagus : MonoBehaviour
         }
     }
 
-    private IEnumerator fadeOut()
+    private IEnumerator fadeOut(Renderer rend)
     {
 
-        while (this.renderer.material.color.a > 0)
+        while (rend.material.color.a > 0)
         {
-            Color objectColor = this.renderer.material.color;
+            Color objectColor = rend.material.color;
             float fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-            this.renderer.material.color = objectColor;
-            Debug.Log("fading out " + this.renderer.material.color.a);
+            rend.material.color = objectColor;
+            Debug.Log("fading out " + rend.material.color.a);
             yield return null;
         }
 
@@ -144,25 +158,62 @@ public class TriggerSarchophagus : MonoBehaviour
         {
             Debug.Log("Player has left the pedestal");
             audioSource.Stop();
-            StartCoroutine(fadeIn());
+            StartCoroutine(fadeIn(renderer));
+            StartCoroutine(ResetPedestal());
             StartCoroutine(changeLightMap(brightLightmap, brightReflectionProbes));
             hasInteracted = false;
         }
     }
 
-    private IEnumerator fadeIn()
+    private IEnumerator fadeIn(Renderer rend)
     {
 
-        while (this.renderer.material.color.a < 1)
+        while (rend.material.color.a < 1)
         {
-            Color objectColor = this.renderer.material.color;
+            Color objectColor = rend.material.color;
             float fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
 
             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-            this.renderer.material.color = objectColor;
-            Debug.Log("fading in" + this.renderer.material.color.a);
+            rend.material.color = objectColor;
+            Debug.Log("fading in" + rend.material.color.a);
             yield return null;
         }
 
+    }
+
+    private IEnumerator LiftPedestal()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = initialPosition.position;
+        Vector3 targetPosition = this.targetPosition.position;
+
+        while (elapsedTime < liftingDuration)
+        {
+            float t = elapsedTime / liftingDuration;
+            pedestal.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the pedestal reaches the target position precisely
+        pedestal.transform.position = targetPosition;
+    }
+
+    private IEnumerator ResetPedestal()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = this.targetPos;
+        Vector3 targetPosition = this.initPos;
+
+        while (elapsedTime < liftingDuration)
+        {
+            float t = elapsedTime / liftingDuration;
+            pedestal.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the pedestal reaches the target position precisely
+        pedestal.transform.position = targetPosition;
     }
 }
