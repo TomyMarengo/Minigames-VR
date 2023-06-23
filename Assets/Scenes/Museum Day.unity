@@ -8990,7 +8990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1282675611469084, guid: 74595d96ab8fc1048a214e9741e02c73, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1364444757356274, guid: 74595d96ab8fc1048a214e9741e02c73, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9086,57 +9086,57 @@ MonoBehaviour:
   renderer: {fileID: 899896432}
   fadeSpeed: 1
   darkLightmapDir:
-  - {fileID: 2800000, guid: ffa1d132dcd624440a8a47c55833edc6, type: 3}
-  - {fileID: 2800000, guid: 620d114a8c4bd3e42b156e7c62369b8f, type: 3}
-  - {fileID: 2800000, guid: b3cbd736bfa8b764fb0bbce8bb2a0541, type: 3}
-  - {fileID: 2800000, guid: f86a3082057377448b8b13f485f39564, type: 3}
-  - {fileID: 2800000, guid: ae5ad1e592fdd6d4dbc96695eef9c7ef, type: 3}
+  - {fileID: 2800000, guid: e14bf041d43a25e41a47a0a848bc2a4b, type: 3}
+  - {fileID: 2800000, guid: e3624bcc4d0149649b8e87ed27f523eb, type: 3}
+  - {fileID: 2800000, guid: 1ea2926e91b56084e848b888356bf53a, type: 3}
+  - {fileID: 2800000, guid: e2af53e3f6185314dafad65b6a2b0083, type: 3}
+  - {fileID: 2800000, guid: 89a8e6166e44dbf4aaabf1970c024290, type: 3}
   darkLightmapColor:
-  - {fileID: 2800000, guid: ebea4fbae40d3a74bac5c4944665d66b, type: 3}
-  - {fileID: 2800000, guid: d79b292f5060a6548928318f3dcdb8b9, type: 3}
-  - {fileID: 2800000, guid: db8a642ae819417409094567bb224b82, type: 3}
-  - {fileID: 2800000, guid: 79d2f0225de29944c93b0c82c67bb882, type: 3}
-  - {fileID: 2800000, guid: 665395e5e5b875041ad683cc3f71ad6a, type: 3}
+  - {fileID: 2800000, guid: cbfe1b3f1d23ad94297d21220d311a53, type: 3}
+  - {fileID: 2800000, guid: 7c1f75e60f6da004eaa8d23adf5f9a99, type: 3}
+  - {fileID: 2800000, guid: 2f90185ba32892b468adca871c0397ae, type: 3}
+  - {fileID: 2800000, guid: d6ad3738142d7f444b0e5beaaf41936c, type: 3}
+  - {fileID: 2800000, guid: e55d68e6fedf90441a386a2f72660e03, type: 3}
   brightLightmapDir:
-  - {fileID: 2800000, guid: ae549c32e973d924297bb9524e2a24a9, type: 3}
-  - {fileID: 2800000, guid: 6b05d7f28d9bb8347a6e956042e5e533, type: 3}
-  - {fileID: 2800000, guid: 0901afa8dd9f1574e8dc2ba150231eb5, type: 3}
-  - {fileID: 2800000, guid: c765bde411636d04b911a7d572cc0490, type: 3}
-  - {fileID: 2800000, guid: 4756c01efe9698f40bd08c1c894dc1d3, type: 3}
+  - {fileID: 2800000, guid: bc51ff90b1b206045b86db5a8aed22a8, type: 3}
+  - {fileID: 2800000, guid: 8329a4d9c54fbdb4dbc65923fa36753e, type: 3}
+  - {fileID: 2800000, guid: ae6012a004de1e840be098a553fa9a7d, type: 3}
+  - {fileID: 2800000, guid: 99d1c5683cfb3034d8d8cbc300eb6ee3, type: 3}
+  - {fileID: 2800000, guid: 01cad62cc73a6434ca5ed5b273b0aabf, type: 3}
   brightLightmapColor:
-  - {fileID: 2800000, guid: 97bad76aa131bb6468bd8c7923feea9c, type: 3}
-  - {fileID: 2800000, guid: 3a16451c2d911914ea29c4ba32a30363, type: 3}
-  - {fileID: 2800000, guid: 516c76a01f0c690419274a5e9399faf9, type: 3}
-  - {fileID: 2800000, guid: c063d8697f1051741aaefa1e66cc09b6, type: 3}
-  - {fileID: 2800000, guid: 92733302da490874e9f5cff07444e329, type: 3}
+  - {fileID: 2800000, guid: 498c977e9aba10a42ab4763ef47126d5, type: 3}
+  - {fileID: 2800000, guid: 15bf9122f733bb14e8b6dd772ce18c99, type: 3}
+  - {fileID: 2800000, guid: 668734125407b794f8634753f565b13d, type: 3}
+  - {fileID: 2800000, guid: 3672a732882453840b3712043d08cb0b, type: 3}
+  - {fileID: 2800000, guid: b9c06455d81feb14b96358d99f558128, type: 3}
   singleLightmapDir:
-  - {fileID: 2800000, guid: 11eb6bedae0bbd543817321374bae9c4, type: 3}
-  - {fileID: 2800000, guid: 24aee052fcc9c8b43ad2eda9ad18d7d0, type: 3}
-  - {fileID: 2800000, guid: 48c1952063587344b87669fa377248e4, type: 3}
-  - {fileID: 2800000, guid: 6958fa575562c054abf07f0855577838, type: 3}
-  - {fileID: 2800000, guid: 09bbd3853075e3846b12c9024877d4a2, type: 3}
+  - {fileID: 2800000, guid: 490175a66e1e11b4888fe36409002d27, type: 3}
+  - {fileID: 2800000, guid: 7ac6091340ba5b44983ff6e6d73c069b, type: 3}
+  - {fileID: 2800000, guid: ca211f3225a716040acdcd5a8a2d73e8, type: 3}
+  - {fileID: 2800000, guid: 1f0a7fe2c33f51f488431505007ba6f3, type: 3}
+  - {fileID: 2800000, guid: 6ed6a519e9203124cbc698c3e853db70, type: 3}
   singleLightmapColor:
-  - {fileID: 2800000, guid: 6576f16cfc79c934fa7a8993248e1073, type: 3}
-  - {fileID: 2800000, guid: d563695971ce4e449ad8b46d44cdb393, type: 3}
-  - {fileID: 2800000, guid: 779337db275c3dc4187d65faf69c8176, type: 3}
-  - {fileID: 2800000, guid: 93586fdca28e77e46937d5a8033c623e, type: 3}
-  - {fileID: 2800000, guid: b269533b44245d04f9801d84702e45ae, type: 3}
+  - {fileID: 2800000, guid: a7270f5251a7e8d4aa71109286189511, type: 3}
+  - {fileID: 2800000, guid: 1b62ca2820a8e25449c41f81330d3ef6, type: 3}
+  - {fileID: 2800000, guid: 2b6477b6734a146449c8ac21059b08e7, type: 3}
+  - {fileID: 2800000, guid: 1975fb342752d654b9b2dc0144f94f48, type: 3}
+  - {fileID: 2800000, guid: fb17a82b566337a4a9c0274a412d760d, type: 3}
   rendererNew: {fileID: 1865934859}
   audioSource:
   - {fileID: 835491869}
   - {fileID: 835491870}
   brightReflectionProbes:
-  - {fileID: 8900000, guid: 06f8e034777995048ba61ead98d13c81, type: 3}
-  - {fileID: 8900000, guid: 91a5e01d4c120b545b31e53ff0047d3b, type: 3}
-  - {fileID: 8900000, guid: 1939c3e57d1a7764082056efc2913787, type: 3}
+  - {fileID: 8900000, guid: e962e92ad271a13498099562f3683412, type: 3}
+  - {fileID: 8900000, guid: 7b2c1a5a0f51d8641ac03c314c5d53c4, type: 3}
+  - {fileID: 8900000, guid: f5a6d1283f471a242a218b25a044c874, type: 3}
   darkReflectionProbes:
-  - {fileID: 8900000, guid: 5686a74963ddc2141acdbab8bf27c7f4, type: 3}
-  - {fileID: 8900000, guid: e4a34abe1a647884f975d943f0cc2bec, type: 3}
-  - {fileID: 8900000, guid: 59c3bee9059f6e34cbd2f0dac6baf912, type: 3}
+  - {fileID: 8900000, guid: 5250a13ca62f2314d8c6055e9c6b461a, type: 3}
+  - {fileID: 8900000, guid: 91b76f46f681ccd49b4ce61edfaa4da6, type: 3}
+  - {fileID: 8900000, guid: f81708a47fd849b4fb07263e67a5943a, type: 3}
   singleReflectionProbes:
-  - {fileID: 8900000, guid: 08d71287f4d0453459a14179fe7f4434, type: 3}
-  - {fileID: 8900000, guid: c6ac3e96cd10340438de676652048491, type: 3}
-  - {fileID: 8900000, guid: f22b9d088f0767644ba145532aa04926, type: 3}
+  - {fileID: 8900000, guid: 9ac68e431afe2154183a7eb788d07ac4, type: 3}
+  - {fileID: 8900000, guid: ba997f031aa02864d9370e52b3d2ef26, type: 3}
+  - {fileID: 8900000, guid: bec6dbbc9d58039488716673a26cf21d, type: 3}
   changeDuration: 1
   pedestal: {fileID: 181333312}
   initialPosition: {fileID: 1110878331}
