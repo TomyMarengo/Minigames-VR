@@ -13,6 +13,7 @@ public class TriggerSarchophagus : MonoBehaviour
 
     public Texture2D[] darkLightmapDir, darkLightmapColor;
     public Texture2D[] brightLightmapDir, brightLightmapColor;
+    public AudioSource audioSource;
     public Cubemap[] brightReflectionProbes;
     public Cubemap[] darkReflectionProbes;
 
@@ -68,6 +69,7 @@ public class TriggerSarchophagus : MonoBehaviour
         if (!hasInteracted && other.CompareTag("Player"))
         {
             Debug.Log("Player has interacted with the pedestal");
+            audioSource.Play();
             StartCoroutine(fadeOut());
             StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
             hasInteracted = true;
@@ -97,6 +99,7 @@ public class TriggerSarchophagus : MonoBehaviour
         if (hasInteracted && other.CompareTag("Player"))
         {
             Debug.Log("Player has left the pedestal");
+            audioSource.Stop();
             StartCoroutine(fadeIn());
             StartCoroutine(changeLightMap(brightLightmap, brightReflectionProbes));
             hasInteracted = false;
