@@ -9001,6 +9001,18 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 516c76a01f0c690419274a5e9399faf9, type: 3}
   - {fileID: 2800000, guid: c063d8697f1051741aaefa1e66cc09b6, type: 3}
   - {fileID: 2800000, guid: 92733302da490874e9f5cff07444e329, type: 3}
+  singleLightmapDir:
+  - {fileID: 2800000, guid: 11eb6bedae0bbd543817321374bae9c4, type: 3}
+  - {fileID: 2800000, guid: 24aee052fcc9c8b43ad2eda9ad18d7d0, type: 3}
+  - {fileID: 2800000, guid: 48c1952063587344b87669fa377248e4, type: 3}
+  - {fileID: 2800000, guid: 6958fa575562c054abf07f0855577838, type: 3}
+  - {fileID: 2800000, guid: 09bbd3853075e3846b12c9024877d4a2, type: 3}
+  singleLightmapColor:
+  - {fileID: 2800000, guid: 6576f16cfc79c934fa7a8993248e1073, type: 3}
+  - {fileID: 2800000, guid: d563695971ce4e449ad8b46d44cdb393, type: 3}
+  - {fileID: 2800000, guid: 779337db275c3dc4187d65faf69c8176, type: 3}
+  - {fileID: 2800000, guid: 93586fdca28e77e46937d5a8033c623e, type: 3}
+  - {fileID: 2800000, guid: b269533b44245d04f9801d84702e45ae, type: 3}
   audioSource: {fileID: 835491869}
   brightReflectionProbes:
   - {fileID: 8900000, guid: 06f8e034777995048ba61ead98d13c81, type: 3}
@@ -9010,6 +9022,10 @@ MonoBehaviour:
   - {fileID: 8900000, guid: 5686a74963ddc2141acdbab8bf27c7f4, type: 3}
   - {fileID: 8900000, guid: e4a34abe1a647884f975d943f0cc2bec, type: 3}
   - {fileID: 8900000, guid: 59c3bee9059f6e34cbd2f0dac6baf912, type: 3}
+  singleReflectionProbes:
+  - {fileID: 8900000, guid: 08d71287f4d0453459a14179fe7f4434, type: 3}
+  - {fileID: 8900000, guid: c6ac3e96cd10340438de676652048491, type: 3}
+  - {fileID: 8900000, guid: f22b9d088f0767644ba145532aa04926, type: 3}
 --- !u!135 &835491867
 SphereCollider:
   m_ObjectHideFlags: 0

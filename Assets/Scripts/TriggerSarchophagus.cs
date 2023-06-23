@@ -13,11 +13,17 @@ public class TriggerSarchophagus : MonoBehaviour
 
     public Texture2D[] darkLightmapDir, darkLightmapColor;
     public Texture2D[] brightLightmapDir, brightLightmapColor;
+    public Texture2D[] singleLightmapDir, singleLightmapColor;
     public AudioSource audioSource;
     public Cubemap[] brightReflectionProbes;
     public Cubemap[] darkReflectionProbes;
+    public Cubemap[] singleReflectionProbes;
 
-    private LightmapData[] darkLightmap, brightLightmap;
+    bool singleLight = false;
+    private float elapsedTime = 0f;
+    public float changeDuration = 1f;
+
+    private LightmapData[] darkLightmap, brightLightmap, singleLightmap;
 
     private void Start()
     {
@@ -49,6 +55,21 @@ public class TriggerSarchophagus : MonoBehaviour
         }
 
         brightLightmap = blightmap.ToArray();
+
+        List<LightmapData> slightmap = new List<LightmapData>();
+
+
+        for (int i = 0; i < singleLightmapDir.Length; i++)
+        {
+            LightmapData smdata = new LightmapData();
+
+            smdata.lightmapDir = singleLightmapDir[i];
+            smdata.lightmapColor = singleLightmapColor[i];
+
+            slightmap.Add(smdata);
+        }
+
+        singleLightmap = slightmap.ToArray();
     }
 
     private IEnumerator changeLightMap(LightmapData[] lightmapData, Cubemap[] probes)
@@ -73,6 +94,29 @@ public class TriggerSarchophagus : MonoBehaviour
             StartCoroutine(fadeOut());
             StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
             hasInteracted = true;
+        } 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (hasInteracted && other.CompareTag("Player"))
+        {
+            Debug.Log("entro");
+            if (elapsedTime > changeDuration)
+            {
+                if (singleLight)
+                {
+                    StartCoroutine(changeLightMap(darkLightmap, darkReflectionProbes));
+                    singleLight = false;
+                }
+                else
+                {
+                    singleLight = true;
+                    StartCoroutine(changeLightMap(singleLightmap, singleReflectionProbes));
+                }
+                elapsedTime = 0f;
+            }
+            elapsedTime += Time.deltaTime;
         }
     }
 
