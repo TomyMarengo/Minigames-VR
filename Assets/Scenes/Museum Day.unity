@@ -8984,11 +8984,11 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f86a3082057377448b8b13f485f39564, type: 3}
   - {fileID: 2800000, guid: ae5ad1e592fdd6d4dbc96695eef9c7ef, type: 3}
   darkLightmapColor:
+  - {fileID: 2800000, guid: ebea4fbae40d3a74bac5c4944665d66b, type: 3}
+  - {fileID: 2800000, guid: d79b292f5060a6548928318f3dcdb8b9, type: 3}
+  - {fileID: 2800000, guid: db8a642ae819417409094567bb224b82, type: 3}
   - {fileID: 2800000, guid: 79d2f0225de29944c93b0c82c67bb882, type: 3}
   - {fileID: 2800000, guid: 665395e5e5b875041ad683cc3f71ad6a, type: 3}
-  - {fileID: 2800000, guid: db8a642ae819417409094567bb224b82, type: 3}
-  - {fileID: 2800000, guid: d79b292f5060a6548928318f3dcdb8b9, type: 3}
-  - {fileID: 2800000, guid: ebea4fbae40d3a74bac5c4944665d66b, type: 3}
   brightLightmapDir:
   - {fileID: 2800000, guid: ae549c32e973d924297bb9524e2a24a9, type: 3}
   - {fileID: 2800000, guid: 6b05d7f28d9bb8347a6e956042e5e533, type: 3}
