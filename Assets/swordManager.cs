@@ -30,6 +30,7 @@ public class swordManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(hoja);
             GameObject sword = Instantiate(swordPrefab, transform.position, transform.rotation);
+            sword.name = "Espada";
 
             XRBaseInteractable swordInteractable = sword.GetComponent<XRBaseInteractable>();
 
