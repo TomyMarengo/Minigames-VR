@@ -94,7 +94,7 @@ MeshCollider:
   m_GameObject: {fileID: 4758523099634471570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -110,10 +110,10 @@ GameObject:
   - component: {fileID: 4999992220813470687}
   - component: {fileID: 5952828729659177510}
   - component: {fileID: 4192268988044115712}
-  - component: {fileID: 4192268988044115716}
   - component: {fileID: 4192268988044115715}
   - component: {fileID: 4192268988044115714}
-  - component: {fileID: 4192268988044115713}
+  - component: {fileID: 711449908298300827}
+  - component: {fileID: 6277131670570934481}
   m_Layer: 7
   m_Name: Lever
   m_TagString: Untagged
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7139561968947613886}
-  m_LocalRotation: {x: 0.4962407, y: 1.1393296e-16, z: 7.593603e-17, w: 0.86818504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0034675598, y: -0.058508396, z: -0.039481163}
   m_LocalScale: {x: 0.0026171529, y: 0.011166132, z: 0.006909749}
   m_ConstrainProportionsScale: 0
@@ -186,20 +186,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4192268988044115716
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139561968947613886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -211007548206913942, guid: 0dec45831925e2441b2f0dff53e9be67, type: 3}
 --- !u!54 &4192268988044115715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -229,7 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 711449908298300827}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -341,7 +328,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!59 &4192268988044115713
+--- !u!65 &711449908298300827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139561968947613886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.39647, y: 1.8155735, z: 28.954071}
+  m_Center: {x: 0.00000047683716, y: 0.00000023841856, z: -14.476913}
+--- !u!59 &6277131670570934481
 HingeJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,14 +350,14 @@ HingeJoint:
   m_GameObject: {fileID: 7139561968947613886}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.90784806, z: 0}
+  m_Anchor: {x: 0, y: 0, z: 0.13}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
     spring: 0
-    damper: 1
+    damper: 2
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -366,8 +366,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -27.119099
-    max: 90.16352
+    min: -63.681152
+    max: 60.593178
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
