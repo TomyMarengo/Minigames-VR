@@ -12,6 +12,7 @@ public class RotateMap : MonoBehaviour
     private bool hasInteracted = false;
     public float rotationSnapThreshold = 10f;
     private bool puzzleDone = false;
+    public AudioSource audioSource;
     private void OnTriggerEnter(Collider other)
     {
         if (!hasInteracted && other.gameObject.tag == "Player")
@@ -22,6 +23,7 @@ public class RotateMap : MonoBehaviour
             {
                 Debug.Log("Correct position reached");
                 puzzleDone = true;
+                audioSource.Play();
             }
             else
             {
