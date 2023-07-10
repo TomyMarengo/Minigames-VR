@@ -8,24 +8,33 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class RotateMap : MonoBehaviour
 {
     public Transform transform;
-    public float rotation = 15f;
+    public float rotation = 10f;
     private bool hasInteracted = false;
     public float rotationSnapThreshold = 10f;
+    private bool puzzleDone = false;
     private void OnTriggerEnter(Collider other)
     {
         if (!hasInteracted && other.gameObject.tag == "Player")
         {
             transform.Rotate(rotation, 0f, 0f, Space.Self);
             Debug.Log("ROTATING to " + transform.localRotation.eulerAngles.x.ToString());
-            if (Mathf.Abs(transform.localRotation.eulerAngles.x) % 360f < rotationSnapThreshold)
+            if ((Mathf.Abs(transform.localRotation.eulerAngles.x) % 360f) < rotationSnapThreshold)
             {
-                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-
                 Debug.Log("Correct position reached");
+                puzzleDone = true;
+            }
+            else
+            {
+                puzzleDone = false;
             }
 
             hasInteracted = true;
         }
+    }
+
+    public bool getPuzzleDone()
+    {
+        return puzzleDone;
     }
 
 

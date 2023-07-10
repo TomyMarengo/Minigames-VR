@@ -6,12 +6,13 @@ using UnityEngine;
 public class LeverPuzzle : MonoBehaviour
 {
     private enum Status {UP=1, DOWN, MIDDLE};
-    public float upRotation = 55f; // Adjust this value based on the lever's "up" rotation
-    public float downRotation = -55f; // Adjust this value based on the lever's "down" rotation
+    public float upRotation = 40f; // Adjust this value based on the lever's "up" rotation
+    public float downRotation = -40f; // Adjust this value based on the lever's "down" rotation
 
     public XRGrabInteractable[] leverInteractables;
     private Transform[] leverTransforms;
     private Status[] leversStatus;
+    private bool puzzleDone = false;
 
 
     // Start is called before the first frame update
@@ -30,28 +31,40 @@ public class LeverPuzzle : MonoBehaviour
 
     private bool CheckLevers()
     {
-        for (int i = 0; i < leversStatus.Length; i++)
+        for (int i = 1; i < leversStatus.Length; i++)
         {
-            if(leversStatus[i] != Status.UP)
+            if(leversStatus[i] != Status.DOWN)
             {
                 return false;
             }
+
         }
-        Debug.Log("ALL LEVERS ARE UP");
-        return true;
+        if (leversStatus[0] == Status.UP)
+            return true;
+        return false;
+        
+    }
+
+    public bool getPuzzleDone()
+    {
+        return puzzleDone;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Iterate through each lever
+        if (CheckLevers())
+        {
+            puzzleDone = true;
+        }
         for (int i = 0; i < leverInteractables.Length; i++)
         {
             XRGrabInteractable leverInteractable = leverInteractables[i];
             Transform leverTransform = leverTransforms[i];
 
             // Check the lever's rotation using local rotation
-            float leverRotation = leverTransform.localRotation.eulerAngles.x; // Adjust this line based on your implementation
+            float leverRotation = leverTransform.localRotation.x * 100; // Adjust this line based on your implementation
 
             // Determine if the lever is up or down based on the rotation threshold
             bool isLeverUp = (leverRotation >= upRotation);
@@ -62,6 +75,7 @@ public class LeverPuzzle : MonoBehaviour
             {
                 if (leversStatus[i] != Status.UP)
                 {
+                    Debug.Log("Lever " + i.ToString() + " set to up");
                     leversStatus[i] = Status.UP;
                 }
                 // Lever is up
@@ -71,6 +85,7 @@ public class LeverPuzzle : MonoBehaviour
             {
                 if (leversStatus[i] != Status.DOWN)
                 {
+                    Debug.Log("Lever " + i.ToString() + " set to down");
                     leversStatus[i] = Status.DOWN;
                 }
                 // Lever is down
@@ -86,6 +101,6 @@ public class LeverPuzzle : MonoBehaviour
             }
         }
 
-        CheckLevers();
+        
     }
 }
