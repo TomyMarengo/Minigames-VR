@@ -22333,6 +22333,7 @@ GameObject:
   - component: {fileID: 1124878334}
   - component: {fileID: 1124878336}
   - component: {fileID: 1124878335}
+  - component: {fileID: 1124878339}
   m_Layer: 0
   m_Name: Left Direct Controller
   m_TagString: Player
@@ -22711,6 +22712,19 @@ Transform:
   m_Father: {fileID: 1994067099}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1124878339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124878333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.010681519, y: 0.012173295, z: 0.1178572}
+  m_Center: {x: -0.011824214, y: 0.040000074, z: 0.01}
 --- !u!1 &1137590799
 GameObject:
   m_ObjectHideFlags: 0
@@ -31660,6 +31674,7 @@ GameObject:
   - component: {fileID: 1692527099}
   - component: {fileID: 1692527101}
   - component: {fileID: 1692527100}
+  - component: {fileID: 1692527104}
   m_Layer: 0
   m_Name: Right Direct Controller
   m_TagString: Player
@@ -32038,6 +32053,19 @@ Transform:
   m_Father: {fileID: 1994067099}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1692527104
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692527098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.010681519, y: 0.012173295, z: 0.1178572}
+  m_Center: {x: -0.011824214, y: 0.040000074, z: 0.01}
 --- !u!1 &1698028350
 GameObject:
   m_ObjectHideFlags: 0
