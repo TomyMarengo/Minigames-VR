@@ -20976,7 +20976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer:
-    m_Bits: 4294967295
+    m_Bits: 2
 --- !u!114 &1095099230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20989,7 +20989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf14522d53cc1594991c164e785780dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceToggle: 1
+  forceToggle: 0
   directInteractor: {fileID: 1124878334}
 --- !u!114 &1095099231
 MonoBehaviour:
@@ -25998,7 +25998,7 @@ MonoBehaviour:
   - {fileID: 1952452603}
   - {fileID: 498518392}
   - {fileID: 1870418985}
-  audioClip: {fileID: 8300000, guid: 0d9ba9deac23f4ff199b989fe352e768, type: 3}
+  audioClick: {fileID: 0}
   cooldownTime: 1
 --- !u!135 &1366388478
 SphereCollider:
@@ -28104,7 +28104,8 @@ MonoBehaviour:
   - {fileID: 1952452603}
   - {fileID: 498518392}
   - {fileID: 1870418985}
-  audioClip: {fileID: 8300000, guid: 0d9ba9deac23f4ff199b989fe352e768, type: 3}
+  audioClick: {fileID: 0}
+  resolved: {fileID: 0}
   cooldownTime: 1
   door: {fileID: 1170592932}
 --- !u!135 &1480392518
@@ -31726,7 +31727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer:
-    m_Bits: 4294967295
+    m_Bits: 2
 --- !u!114 &1708614512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31739,7 +31740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf14522d53cc1594991c164e785780dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceToggle: 1
+  forceToggle: 0
   directInteractor: {fileID: 1692527099}
 --- !u!114 &1708614513
 MonoBehaviour:
