@@ -6,14 +6,19 @@ public class Keypad : MonoBehaviour
 {
     private int[] passwordBuffer = new int[4]; // Password buffer to store the pressed keys
     private int bufferIndex = 0; // Current index in the password buffer
-    private SphereCollider originalColliderLeft;
-    private SphereCollider originalColliderRight;
+    private SphereCollider sphereLeft;
+    private SphereCollider sphereRight;
+    private BoxCollider boxLeft;
+    private BoxCollider boxRight;
 
     private void Start()
     {
         ClearBuffer();
-        originalColliderLeft = null;
-        originalColliderRight = null;
+        sphereLeft = null;
+        sphereRight = null;
+
+        boxLeft = null;
+        boxRight = null;
     }
     public void PressKey(int keyValue)
     {
@@ -81,15 +86,21 @@ public class Keypad : MonoBehaviour
         if (other.gameObject.name == "Right Direct Controller")
         {
             // Check if the collider is a sphere collider
-            originalColliderRight = other.GetComponent<SphereCollider>();
-            originalColliderRight.isTrigger = false;
+            sphereRight = other.GetComponent<SphereCollider>();
+            sphereRight.enabled = false;
+
+            boxRight = other.GetComponent<BoxCollider>();
+            boxRight.enabled = true;
         }
 
         if (other.gameObject.name == "Left Direct Controller")
         {
             // Check if the collider is a sphere collider
-            originalColliderLeft = other.GetComponent<SphereCollider>();
-            originalColliderLeft.isTrigger = false;
+            sphereLeft = other.GetComponent<SphereCollider>();
+            sphereLeft.enabled = false;
+
+            boxLeft = other.GetComponent<BoxCollider>();
+            boxLeft.enabled = true;
         }
     }
 
@@ -97,13 +108,16 @@ public class Keypad : MonoBehaviour
     {
         if (other.gameObject.name == "Left Direct Controller")
         {
-            originalColliderLeft.isTrigger = true;
+            boxLeft.enabled = false;
+            sphereLeft.enabled = true;
         }
 
         if (other.gameObject.name == "Right Direct Controller")
         {
             // Check if the collider is a mesh collider
-            originalColliderRight.isTrigger = true;
+            boxRight.enabled = false;
+            sphereRight.enabled = true;
+            
         }
     }
 
