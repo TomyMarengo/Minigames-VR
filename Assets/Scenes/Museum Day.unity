@@ -14193,7 +14193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 508984770}
-  audioClip: {fileID: 8300000, guid: c6c4404b75f38ad4c80bf89c27119418, type: 3}
+  audioClip: {fileID: 8300000, guid: f6add2b2148a82c4d914c596d382ef11, type: 3}
   targetPos: {fileID: 7934299978159765982}
   velocidadMovimiento: 1
   duracionMovimiento: 1
@@ -29860,7 +29860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1364218231}
-  audioClip: {fileID: 8300000, guid: 4bae2e459d52bf746a679b197d78e37f, type: 3}
+  audioClip: {fileID: 8300000, guid: 33c28a93b2fd3ad4c8adaba7a8cccee9, type: 3}
   targetPos: {fileID: 7934299976766934113}
   velocidadMovimiento: 1
   duracionMovimiento: 1
@@ -36961,7 +36961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1482319639}
-  audioClip: {fileID: 8300000, guid: 15a8e998e171cca4590c5c6e773ac607, type: 3}
+  audioClip: {fileID: 8300000, guid: c6761461a8eaa13438252f4b183e9063, type: 3}
   targetPos: {fileID: 7934299976786799888}
   velocidadMovimiento: 1
   duracionMovimiento: 1
