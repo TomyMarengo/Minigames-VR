@@ -7,12 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RotateMap : MonoBehaviour
 {
-    public Transform transform;
     public float rotation = 10f;
     private bool hasInteracted = false;
     public float rotationSnapThreshold = 10f;
-    private bool puzzleDone = false;
     public AudioSource audioSource;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!hasInteracted && other.gameObject.tag == "Player")
@@ -22,23 +21,20 @@ public class RotateMap : MonoBehaviour
             if ((Mathf.Abs(transform.localRotation.eulerAngles.x) % 360f) < rotationSnapThreshold)
             {
                 Debug.Log("Correct position reached");
-                puzzleDone = true;
-                audioSource.Play();
+                GreekRomanPuzzleManager.mapPuzzle = true;
+                if (!GreekRomanPuzzleManager.leverPuzzle) {
+                    audioSource.Play();
+                }
+                
             }
             else
             {
-                puzzleDone = false;
+                GreekRomanPuzzleManager.mapPuzzle = false;
             }
 
             hasInteracted = true;
         }
     }
-
-    public bool getPuzzleDone()
-    {
-        return puzzleDone;
-    }
-
 
     private void OnTriggerExit(Collider other)
     {

@@ -12,7 +12,8 @@ public class LeverPuzzle : MonoBehaviour
     public XRGrabInteractable[] leverInteractables;
     private Transform[] leverTransforms;
     private Status[] leversStatus;
-    private bool puzzleDone = false;
+
+    public AudioSource audioSource;
 
 
     // Start is called before the first frame update
@@ -45,19 +46,15 @@ public class LeverPuzzle : MonoBehaviour
         
     }
 
-    public bool getPuzzleDone()
-    {
-        return puzzleDone;
-    }
-
     // Update is called once per frame
     void Update()
     {
         // Iterate through each lever
-        if (CheckLevers())
-        {
-            puzzleDone = true;
+        GreekRomanPuzzleManager.leverPuzzle = CheckLevers();
+        if (GreekRomanPuzzleManager.leverPuzzle && !GreekRomanPuzzleManager.mapPuzzle) {
+            audioSource.Play();
         }
+
         for (int i = 0; i < leverInteractables.Length; i++)
         {
             XRGrabInteractable leverInteractable = leverInteractables[i];
@@ -75,7 +72,6 @@ public class LeverPuzzle : MonoBehaviour
             {
                 if (leversStatus[i] != Status.UP)
                 {
-                    Debug.Log("Lever " + i.ToString() + " set to up");
                     leversStatus[i] = Status.UP;
                 }
                 // Lever is up
@@ -85,7 +81,6 @@ public class LeverPuzzle : MonoBehaviour
             {
                 if (leversStatus[i] != Status.DOWN)
                 {
-                    Debug.Log("Lever " + i.ToString() + " set to down");
                     leversStatus[i] = Status.DOWN;
                 }
                 // Lever is down
@@ -95,7 +90,6 @@ public class LeverPuzzle : MonoBehaviour
             {
                 if( leversStatus[i] != Status.MIDDLE)
                 {
-                    Debug.Log("Lever " + i.ToString() + " set to middle");
                     leversStatus[i] = Status.MIDDLE;
                 }
             }

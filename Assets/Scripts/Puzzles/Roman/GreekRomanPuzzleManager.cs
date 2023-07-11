@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreekRomanPuzzleManager : MonoBehaviour
+public static class GreekRomanPuzzleManager
 {
+    public static AudioClip resolved;
+    public static GameObject door;
 
-    private LeverPuzzle leverPuzzle;
-    private RotateMap[] rotatePuzzles;
+    public static bool leverPuzzle = false;
+    public static bool mapPuzzle = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        leverPuzzle = GetComponentInChildren<LeverPuzzle>();
-        rotatePuzzles = GetComponentsInChildren<RotateMap>();
-
+    public static void Initialize(GameObject doorObj, AudioClip resolvedObj) {
+        door = doorObj;
+        resolved = resolvedObj;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(leverPuzzle.getPuzzleDone() && rotatePuzzles[0].getPuzzleDone() && rotatePuzzles[1].getPuzzleDone())
-        {
-            Debug.Log("All puzzles completed!");
+    public static void CheckStatus() {
+        if (leverPuzzle && mapPuzzle) {
+            if (door != null) {
+                AudioSource.PlayClipAtPoint(resolved, door.transform.position);
+                GameObject.Destroy(door);
+            }
         }
     }
 }
