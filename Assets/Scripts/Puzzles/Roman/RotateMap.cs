@@ -10,7 +10,6 @@ public class RotateMap : MonoBehaviour
     public float rotation = 10f;
     private bool hasInteracted = false;
     public float rotationSnapThreshold = 10f;
-    private bool puzzleDone = false;
     public AudioSource audioSource;
     
     private void OnTriggerEnter(Collider other)

@@ -12,7 +12,6 @@ public class LeverPuzzle : MonoBehaviour
     public XRGrabInteractable[] leverInteractables;
     private Transform[] leverTransforms;
     private Status[] leversStatus;
-    private bool puzzleDone = false;
 
     public AudioSource audioSource;
 
