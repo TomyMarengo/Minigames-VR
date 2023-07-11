@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gettingSword : MonoBehaviour
+public class GettingSword : MonoBehaviour
 {
     public GameObject katana;
     public GameObject door1;
@@ -27,7 +27,7 @@ public class gettingSword : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.name == "Espada") {
             Destroy(other.gameObject);
-            AudioSource.PlayClipAtPoint(audioClip, door1.transform.position);
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             Destroy(door1);
             Destroy(door2);
             katana.SetActive(true);

@@ -1151,22 +1151,22 @@ PrefabInstance:
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.607
+      value: 12.907
       objectReference: {fileID: 0}
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.401
+      value: 1.426
       objectReference: {fileID: 0}
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.644
+      value: 2.727
       objectReference: {fileID: 0}
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.90503925
       objectReference: {fileID: 0}
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
@@ -1181,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.4253282
       objectReference: {fileID: 0}
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
@@ -1196,7 +1196,7 @@ PrefabInstance:
     - target: {fileID: 1061222561237139184, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -50.343
       objectReference: {fileID: 0}
     - target: {fileID: 2703472322108154179, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
@@ -1226,7 +1226,7 @@ PrefabInstance:
     - target: {fileID: 4115112283747149122, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
       propertyPath: m_DistanceCalculationMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4115112283747149122, guid: e2184f809c590ac42ad81f0f45f04def,
         type: 3}
@@ -2787,7 +2787,7 @@ PrefabInstance:
     - target: {fileID: 2295885875378405469, guid: 76cdfc2fed712984099a740820cf708e,
         type: 3}
       propertyPath: m_InteractionLayers.m_Bits
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76cdfc2fed712984099a740820cf708e, type: 3}
@@ -18799,7 +18799,8 @@ MonoBehaviour:
     m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
-  m_CustomReticle: {fileID: 0}
+  m_CustomReticle: {fileID: 8656087483511947524, guid: 50f8d835961353c4a8e0c4b77d7f8876,
+    type: 3}
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -19271,7 +19272,8 @@ MonoBehaviour:
     m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
-  m_CustomReticle: {fileID: 0}
+  m_CustomReticle: {fileID: 8656087483511947524, guid: 50f8d835961353c4a8e0c4b77d7f8876,
+    type: 3}
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -25122,7 +25124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306085674}
   m_LocalRotation: {x: -0, y: 0.014607106, z: -0, w: 0.99989337}
-  m_LocalPosition: {x: -7.14, y: 0, z: 7.73}
+  m_LocalPosition: {x: -8.32, y: 0, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25824,7 +25826,7 @@ MonoBehaviour:
   katana: {fileID: 2004274947}
   door1: {fileID: 1467922534}
   door2: {fileID: 713163021}
-  audioClip: {fileID: 8300000, guid: 4542817782b563d499e0a5c4efa68501, type: 3}
+  audioClip: {fileID: 8300000, guid: 40aa5ab1e795b054780727129531ffc7, type: 3}
 --- !u!82 &1364218233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25881,7 +25883,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -25998,7 +26000,7 @@ MonoBehaviour:
   - {fileID: 1952452603}
   - {fileID: 498518392}
   - {fileID: 1870418985}
-  audioClick: {fileID: 0}
+  audioClick: {fileID: 8300000, guid: 0d9ba9deac23f4ff199b989fe352e768, type: 3}
   cooldownTime: 1
 --- !u!135 &1366388478
 SphereCollider:
@@ -28104,8 +28106,8 @@ MonoBehaviour:
   - {fileID: 1952452603}
   - {fileID: 498518392}
   - {fileID: 1870418985}
-  audioClick: {fileID: 0}
-  resolved: {fileID: 0}
+  audioClick: {fileID: 8300000, guid: 0d9ba9deac23f4ff199b989fe352e768, type: 3}
+  resolved: {fileID: 8300000, guid: 40aa5ab1e795b054780727129531ffc7, type: 3}
   cooldownTime: 1
   door: {fileID: 1170592932}
 --- !u!135 &1480392518

@@ -27,17 +27,21 @@ public class SwordManager : MonoBehaviour
 
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.name == "Hoja") {
-            Destroy(gameObject);
-            Destroy(hoja);
+            
+            
             GameObject sword = Instantiate(swordPrefab, transform.position, transform.rotation);
             sword.name = "Espada";
 
             XRBaseInteractable swordInteractable = sword.GetComponent<XRBaseInteractable>();
 
             if (rHand.selectTarget.name == "Hoja") {
+                Destroy(gameObject);
+                Destroy(hoja);
                 lHand.interactionManager.ForceSelect(lHand, swordInteractable);
             }
             if (lHand.selectTarget.name == "Hoja") {
+                Destroy(gameObject);
+                Destroy(hoja);
                 rHand.interactionManager.ForceSelect(rHand, swordInteractable);
             }
         }

@@ -5,15 +5,12 @@ using UnityEngine;
 public class ChangeMaterialsUp : MonoBehaviour
 {
     private Vector3 initialPosition;
-
     public Material[] materials;
     public GameObject[] objects;
     public AudioClip audioClick;
     public AudioClip resolved;
-
-    private int materialIndex = 0;
     private bool canPressButton = true;
-    public float cooldownTime = 0.7f;
+    public float cooldownTime = 0.3f;
     public GameObject door;
 
 
@@ -36,6 +33,8 @@ public class ChangeMaterialsUp : MonoBehaviour
             MaterialStateManager.actualMaterial[1] = (MaterialStateManager.actualMaterial[1] + 1) % 5;
             MaterialStateManager.actualMaterial[2] = (MaterialStateManager.actualMaterial[2] + 3) % 5;
             MaterialStateManager.actualMaterial[3] = (MaterialStateManager.actualMaterial[3] + 0) % 5;
+
+            Debug.Log(MaterialStateManager.actualMaterial);
 
             for (int i = 0; i < objects.Length; i++)
             {
