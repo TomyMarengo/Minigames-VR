@@ -89,16 +89,7 @@ public class Keypad : MonoBehaviour
         {
             // Check if the collider is a sphere collider
             originalColliderLeft = other.GetComponent<SphereCollider>();
-            if (originalColliderLeft != null)
-            {
-
-                // Destroy the existing sphere collider
-                Destroy(other.GetComponent<SphereCollider>());
-                // Create and attach a new mesh collider to the object
-                MeshCollider meshCollider = other.gameObject.AddComponent<MeshCollider>();
-                meshCollider.isTrigger = false;
-                // Set other properties as needed
-            }
+            originalColliderLeft.isTrigger = false;
         }
     }
 
@@ -106,19 +97,7 @@ public class Keypad : MonoBehaviour
     {
         if (other.gameObject.name == "Left Direct Controller")
         {
-            // Check if the collider is a mesh collider
-            MeshCollider meshCollider = other.GetComponent<MeshCollider>();
-            if (meshCollider != null)
-            {
-                // Destroy the mesh collider
-                Destroy(other.GetComponent<MeshCollider>());
-
-                // Recreate and attach the original sphere collider
-                SphereCollider newSphereCollider = other.gameObject.AddComponent<SphereCollider>();
-                newSphereCollider.isTrigger = true;
-                newSphereCollider.radius = originalColliderLeft.radius;
-                newSphereCollider.center = originalColliderLeft.center;
-            }
+            originalColliderLeft.isTrigger = true;
         }
 
         if (other.gameObject.name == "Right Direct Controller")
