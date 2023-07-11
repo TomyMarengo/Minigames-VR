@@ -8,7 +8,8 @@ public class ChangeMaterialsUp : MonoBehaviour
 
     public Material[] materials;
     public GameObject[] objects;
-    public AudioClip audioClip;
+    public AudioClip audioClick;
+    public AudioClip resolved;
 
     private int materialIndex = 0;
     private bool canPressButton = true;
@@ -20,7 +21,7 @@ public class ChangeMaterialsUp : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        MaterialStateManager.Initialize(door);
+        MaterialStateManager.Initialize(door, resolved);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +29,7 @@ public class ChangeMaterialsUp : MonoBehaviour
         if (other.CompareTag("Player") && canPressButton)
         {
             // Mover el botón hacia abajo
-            AudioSource.PlayClipAtPoint(audioClip, transform.position);
+            AudioSource.PlayClipAtPoint(audioClick, transform.position);
             transform.Translate(new Vector3(-0.009f, 0f, -0.006f));
 
             MaterialStateManager.actualMaterial[0] = (MaterialStateManager.actualMaterial[0] + 3) % 5;

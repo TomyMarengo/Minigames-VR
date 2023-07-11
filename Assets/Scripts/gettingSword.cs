@@ -27,10 +27,11 @@ public class gettingSword : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.name == "Espada") {
             Destroy(other.gameObject);
+            AudioSource.PlayClipAtPoint(audioClip, door1.transform.position);
             Destroy(door1);
             Destroy(door2);
             katana.SetActive(true);
-            AudioSource.PlayClipAtPoint(audioClip, transform.position);
+            
         }
     }
 }

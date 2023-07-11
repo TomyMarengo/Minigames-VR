@@ -8,7 +8,7 @@ public class ChangeMaterialsDown : MonoBehaviour
 
     public Material[] materials;
     public GameObject[] objects;
-    public AudioClip audioClip;
+    public AudioClip audioClick;
 
     private int materialIndex = 0;
     private bool canPressButton = true;
@@ -26,7 +26,7 @@ public class ChangeMaterialsDown : MonoBehaviour
         if (other.CompareTag("Player") && canPressButton)
         {
             // Mover el botón hacia abajo
-            AudioSource.PlayClipAtPoint(audioClip, transform.position);
+            AudioSource.PlayClipAtPoint(audioClick, transform.position);
             transform.Translate(new Vector3(-0.009f, 0f, -0.006f));
 
             MaterialStateManager.actualMaterial[0] = (MaterialStateManager.actualMaterial[0] + 3) % 5;
