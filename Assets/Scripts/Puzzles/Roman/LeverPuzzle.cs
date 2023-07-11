@@ -16,9 +16,15 @@ public class LeverPuzzle : MonoBehaviour
     public AudioSource audioSource;
 
 
+    public GameObject door;
+    public AudioClip resolved;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        GreekRomanPuzzleManager.Initialize(door, resolved);
+
         leverTransforms = new Transform[leverInteractables.Length];
         leversStatus = new Status[leverInteractables.Length];
 
@@ -53,6 +59,9 @@ public class LeverPuzzle : MonoBehaviour
         GreekRomanPuzzleManager.leverPuzzle = CheckLevers();
         if (GreekRomanPuzzleManager.leverPuzzle && !GreekRomanPuzzleManager.mapPuzzle) {
             audioSource.Play();
+        }
+        else {
+            GreekRomanPuzzleManager.CheckStatus();
         }
 
         for (int i = 0; i < leverInteractables.Length; i++)

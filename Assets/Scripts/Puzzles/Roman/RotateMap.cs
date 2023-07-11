@@ -25,6 +25,9 @@ public class RotateMap : MonoBehaviour
                 if (!GreekRomanPuzzleManager.leverPuzzle) {
                     audioSource.Play();
                 }
+                else {
+                    GreekRomanPuzzleManager.CheckStatus();
+                }
                 
             }
             else

@@ -3462,6 +3462,8 @@ MonoBehaviour:
   - {fileID: 584677241}
   - {fileID: 621706354}
   audioSource: {fileID: 199652931}
+  door: {fileID: 2002953009}
+  resolved: {fileID: 8300000, guid: 40aa5ab1e795b054780727129531ffc7, type: 3}
 --- !u!82 &199652931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38504,6 +38506,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4795797910543164, guid: 87feaf920236f204ca1e16a74627d515,
     type: 3}
   m_PrefabInstance: {fileID: 1996836372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2002953009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 864907446650280563, guid: a72eb75450a88854ba892f38b43c6380,
+    type: 3}
+  m_PrefabInstance: {fileID: 864907447637895213}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004274947 stripped
 GameObject:
