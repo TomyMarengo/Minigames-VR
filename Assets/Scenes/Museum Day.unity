@@ -1837,7 +1837,7 @@ Transform:
   m_Children:
   - {fileID: 4254844837260410977}
   m_Father: {fileID: 543450652466926944}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &96984887
 Rigidbody:
@@ -2768,7 +2768,7 @@ Transform:
   - {fileID: 992041881}
   - {fileID: 1145707253}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &178924030
 GameObject:
@@ -2801,7 +2801,7 @@ Transform:
   m_Children:
   - {fileID: 8548705696263469737}
   m_Father: {fileID: 543450652466926944}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &178924032
 Rigidbody:
@@ -4421,7 +4421,7 @@ Transform:
   m_Children:
   - {fileID: 2020215684}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &258261866
 GameObject:
@@ -11435,7 +11435,7 @@ Transform:
   m_Children:
   - {fileID: 2314670531801969064}
   m_Father: {fileID: 543450652466926944}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &565893263
 Rigidbody:
@@ -13288,7 +13288,7 @@ PrefabInstance:
     - target: {fileID: 864907446649980435, guid: a72eb75450a88854ba892f38b43c6380,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 864907446649980435, guid: a72eb75450a88854ba892f38b43c6380,
         type: 3}
@@ -23423,7 +23423,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154113091
 GameObject:
@@ -25622,7 +25622,7 @@ Transform:
   - {fileID: 657768442}
   - {fileID: 1673058108}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 1.674, z: 0}
 --- !u!1 &1314493863
 GameObject:
@@ -28117,7 +28117,7 @@ PrefabInstance:
     - target: {fileID: 864907446649980435, guid: a72eb75450a88854ba892f38b43c6380,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 864907446649980435, guid: a72eb75450a88854ba892f38b43c6380,
         type: 3}
@@ -36567,7 +36567,7 @@ Transform:
   - {fileID: 898895848}
   - {fileID: 862862364}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1916603892 stripped
 Transform:
@@ -39626,7 +39626,7 @@ Transform:
   m_Children:
   - {fileID: 7295152857805150124}
   m_Father: {fileID: 543450652466926944}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2055535612
 Rigidbody:
@@ -41019,7 +41019,7 @@ Transform:
   - {fileID: 719431419}
   - {fileID: 1604511883}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120129103
 GameObject:
@@ -41283,7 +41283,7 @@ Transform:
   m_Children:
   - {fileID: 533208307888175149}
   m_Father: {fileID: 543450652466926944}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2132291623
 Rigidbody:
@@ -42647,9 +42647,6 @@ GameObject:
   - component: {fileID: 4530008627268873396}
   - component: {fileID: 8048763969261413278}
   - component: {fileID: 6486017196779223537}
-  - component: {fileID: 2122856795}
-  - component: {fileID: 2122856800}
-  - component: {fileID: 2122856799}
   - component: {fileID: 803735821}
   m_Layer: 0
   m_Name: Tres
@@ -42713,7 +42710,6 @@ Transform:
   - {fileID: 244822651}
   - {fileID: 2032038757}
   - {fileID: 613947175}
-  - {fileID: 522018184}
   - {fileID: 565893262}
   - {fileID: 2055535611}
   - {fileID: 96984886}
@@ -43612,9 +43608,6 @@ GameObject:
   - component: {fileID: 963988802504726162}
   - component: {fileID: 2377625114264974655}
   - component: {fileID: 6771079884422496289}
-  - component: {fileID: 2127250071}
-  - component: {fileID: 2127250076}
-  - component: {fileID: 2127250075}
   - component: {fileID: 388350827}
   m_Layer: 0
   m_Name: Uno
@@ -43695,8 +43688,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 522018184}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4530008627268873396
 Transform:
