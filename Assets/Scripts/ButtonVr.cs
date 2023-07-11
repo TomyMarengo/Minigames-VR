@@ -7,7 +7,9 @@ public class ButtonVr : MonoBehaviour
 {
 
     [SerializeField] private float threshold = 0.1f;
-    [SerializeField] private float deadZone = 0.025f;
+    [SerializeField] private float deadZone = 0.05f;
+    private Keypad keypad;
+    public int value;
 
     private ConfigurableJoint joint;
     public UnityEvent onPress, onRelease;
@@ -19,6 +21,7 @@ public class ButtonVr : MonoBehaviour
     void Start()
     {
         sound = GetComponent<AudioSource>();
+        keypad = GetComponentInParent<Keypad>();
         startPosition = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
         isPressed = false;
@@ -38,10 +41,10 @@ public class ButtonVr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPressed && GetValue() + threshold >= 1)
+        if (!isPressed && GetValue() >= threshold)
             Pressed();
 
-        if (isPressed && GetValue() - threshold <= 0)
+        if (isPressed && GetValue() <=  1 - threshold)
             Released();
     }
     
@@ -49,16 +52,13 @@ public class ButtonVr : MonoBehaviour
     private void Pressed()
     {
         isPressed = true;
-        onPress.Invoke();
-        sound.Play();
+        keypad.PressKey(value);
         Debug.Log("Pressed");
     }
 
     private void Released()
     {
         isPressed = false;
-        onRelease.Invoke();
-        sound.Play();
         Debug.Log("Released");
     }
 
