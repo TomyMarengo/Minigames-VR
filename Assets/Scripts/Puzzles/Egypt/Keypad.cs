@@ -14,6 +14,7 @@ public class Keypad : MonoBehaviour
 
     public TextMeshProUGUI text;
     public GameObject canvas;
+    public AudioClip audioClick;
 
     private void Start()
     {
@@ -26,7 +27,8 @@ public class Keypad : MonoBehaviour
         boxRight = null;
     }
     public void PressKey(int keyValue)
-    {
+    {  
+        AudioSource.PlayClipAtPoint(audioClick, transform.position);
         if (keyValue == 10)
         {
             CheckPassword();
@@ -40,8 +42,6 @@ public class Keypad : MonoBehaviour
             passwordBuffer[bufferIndex] = keyValue;
             bufferIndex++;
             ChangeScreenText(passwordBuffer);
-
-            Debug.Log("Key pressed: " + keyValue);
 
         }
     }
