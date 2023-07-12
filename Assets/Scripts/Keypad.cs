@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Keypad : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class Keypad : MonoBehaviour
     private BoxCollider boxLeft;
     private BoxCollider boxRight;
 
+    public TextMeshProUGUI text;
+
     private void Start()
     {
         ClearBuffer();
         sphereLeft = null;
         sphereRight = null;
+
 
         boxLeft = null;
         boxRight = null;
@@ -25,6 +29,7 @@ public class Keypad : MonoBehaviour
         if (keyValue == 10)
         {
             CheckPassword();
+            return;
         }
         if (bufferIndex < passwordBuffer.Length)
         {
@@ -33,10 +38,29 @@ public class Keypad : MonoBehaviour
 
             passwordBuffer[bufferIndex] = keyValue;
             bufferIndex++;
+            ChangeScreenText(passwordBuffer);
 
             Debug.Log("Key pressed: " + keyValue);
 
         }
+    }
+
+    public string ConvertIntArrayToString(int[] digits)
+    {
+        if (digits == null || digits.Length == 0)
+        {
+            return "0";
+        }
+
+        string numberString = string.Join("", digits);
+
+        return numberString;
+    }
+
+    private void ChangeScreenText(int[] new_text)
+    {
+
+        text.text = ConvertIntArrayToString(new_text);
     }
 
     private void CheckPassword()
@@ -76,6 +100,7 @@ public class Keypad : MonoBehaviour
         {
             passwordBuffer[i] = 0;
         }
+        ChangeScreenText(passwordBuffer);
     }
 
     
