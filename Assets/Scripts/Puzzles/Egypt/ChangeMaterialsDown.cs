@@ -26,19 +26,19 @@ public class ChangeMaterialsDown : MonoBehaviour
             AudioSource.PlayClipAtPoint(audioClick, transform.position);
             transform.Translate(new Vector3(-0.009f, 0f, -0.006f));
 
-            MaterialStateManager.actualMaterial[0] = (MaterialStateManager.actualMaterial[0] + 3) % 5;
-            MaterialStateManager.actualMaterial[1] = (MaterialStateManager.actualMaterial[1] + 1) % 5;
-            MaterialStateManager.actualMaterial[2] = (MaterialStateManager.actualMaterial[2] + 0) % 5;
-            MaterialStateManager.actualMaterial[3] = (MaterialStateManager.actualMaterial[3] + 4) % 5;
+            EgyptianPuzzleManager.actualMaterial[0] = (EgyptianPuzzleManager.actualMaterial[0] + 3) % 5;
+            EgyptianPuzzleManager.actualMaterial[1] = (EgyptianPuzzleManager.actualMaterial[1] + 1) % 5;
+            EgyptianPuzzleManager.actualMaterial[2] = (EgyptianPuzzleManager.actualMaterial[2] + 0) % 5;
+            EgyptianPuzzleManager.actualMaterial[3] = (EgyptianPuzzleManager.actualMaterial[3] + 4) % 5;
 
-            Debug.Log(MaterialStateManager.actualMaterial);
+            Debug.Log(EgyptianPuzzleManager.actualMaterial);
 
             for (int i = 0; i < objects.Length; i++)
             {
-                objects[i].GetComponent<MeshRenderer>().material = materials[MaterialStateManager.actualMaterial[i]];
+                objects[i].GetComponent<MeshRenderer>().material = materials[EgyptianPuzzleManager.actualMaterial[i]];
             }
 
-            MaterialStateManager.CheckStatus();
+            EgyptianPuzzleManager.CheckStatus();
             
             canPressButton = false;
             Invoke(nameof(ResetButton), cooldownTime);

@@ -13,6 +13,7 @@ public class Keypad : MonoBehaviour
     private BoxCollider boxRight;
 
     public TextMeshProUGUI text;
+    public GameObject canvas;
 
     private void Start()
     {
@@ -80,17 +81,18 @@ public class Keypad : MonoBehaviour
 
         if (isPasswordCorrect)
         {
-            Debug.Log("Password correct!");
+            EgyptianPuzzleManager.keypadPuzzle = true;
+            EgyptianPuzzleManager.CheckStatus();
+            Destroy(canvas);
+            Destroy(this);
+
             // Perform actions when the correct password is entered
         }
         else
         {
-            Debug.Log("Password incorrect!");
+            ClearBuffer();
             // Perform actions when the incorrect password is entered
         }
-
-        // Clear the password buffer
-        ClearBuffer();
     }
 
     private void ClearBuffer()
