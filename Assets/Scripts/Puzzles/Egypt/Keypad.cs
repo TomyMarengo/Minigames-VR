@@ -66,7 +66,7 @@ public class Keypad : MonoBehaviour
     private void CheckPassword()
     {
         // Compare the entered password with the correct password
-        int[] correctPassword = { 0, 4, 7, 6 };
+        int[] correctPassword = { 1, 3, 4, 2 };
         bool isPasswordCorrect = true;
 
         for (int i = 0; i < passwordBuffer.Length; i++)
