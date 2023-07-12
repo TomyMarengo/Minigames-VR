@@ -8,50 +8,40 @@ public class ButtonVr : MonoBehaviour
 
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadZone = 0.05f;
+    public GameObject button;
     private Keypad keypad;
     public int value;
 
-    private ConfigurableJoint joint;
     public UnityEvent onPress, onRelease;
-    private Vector3 initialPosition;
     AudioSource sound;
     bool isPressed;
-    Vector3 startPosition;
     
     void Start()
     {
         sound = GetComponent<AudioSource>();
         keypad = GetComponentInParent<Keypad>();
-        startPosition = transform.localPosition;
-        joint = GetComponent<ConfigurableJoint>();
         isPressed = false;
     }
+ 
 
-    private float GetValue()
+    private void OnTriggerEnter(Collider other)
     {
-        var value = Vector3.Distance(startPosition, transform.localPosition) / joint.linearLimit.limit;
-
-        if (Mathf.Abs(value) < deadZone)
-            value = 0;
-
-        return Mathf.Clamp(value, -1f, 1f);
-    }
-
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (!isPressed && GetValue() >= threshold)
+        if (!isPressed && other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Pressed");
+            button.transform.Translate(new Vector3(0, 0f, 0.015f));
             Pressed();
         }
-            
-
-        if (isPressed && GetValue() <=  1 - threshold)
-            Released();
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isPressed && other.gameObject.CompareTag("Player"))
+        {
+            button.transform.Translate(new Vector3(0, 0f, -0.015f));
+            Released();
+        }
+    }
+
 
     private void Pressed()
     {
