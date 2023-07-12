@@ -84,7 +84,7 @@ public class Keypad : MonoBehaviour
             EgyptianPuzzleManager.keypadPuzzle = true;
             EgyptianPuzzleManager.CheckStatus();
             Destroy(canvas);
-            Destroy(this);
+            Destroy(gameObject);
 
             // Perform actions when the correct password is entered
         }
