@@ -28,16 +28,19 @@ public class Keypad : MonoBehaviour
     }
     public void PressKey(int keyValue)
     {  
-        AudioSource.PlayClipAtPoint(audioClick, transform.position);
         if (keyValue == 10)
         {
             CheckPassword();
             return;
         }
+        else {
+            AudioSource.PlayClipAtPoint(audioClick, transform.position);
+        }
+        
         if (bufferIndex < passwordBuffer.Length)
         {
-            // Check if the password buffer is full
             
+            // Check if the password buffer is full
 
             passwordBuffer[bufferIndex] = keyValue;
             bufferIndex++;
@@ -90,6 +93,7 @@ public class Keypad : MonoBehaviour
         }
         else
         {
+            AudioSource.PlayClipAtPoint(audioClick, transform.position);
             ClearBuffer();
             // Perform actions when the incorrect password is entered
         }
