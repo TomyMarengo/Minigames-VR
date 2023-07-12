@@ -19,12 +19,13 @@ public class LeverPuzzle : MonoBehaviour
 
     public GameObject door;
     public AudioClip resolved;
+    public GameObject congratulations;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GreekRomanPuzzleManager.Initialize(door, resolved);
+        GreekRomanPuzzleManager.Initialize(door, resolved, congratulations);
 
         leverTransforms = new Transform[leverInteractables.Length];
         leversStatus = new Status[leverInteractables.Length];
