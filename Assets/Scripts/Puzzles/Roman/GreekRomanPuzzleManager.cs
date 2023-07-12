@@ -8,7 +8,7 @@ public static class GreekRomanPuzzleManager
     public static GameObject door;
 
     public static bool leverPuzzle = false;
-    public static bool mapPuzzle = false;
+    public static int mapPuzzle = 0;
 
     public static void Initialize(GameObject doorObj, AudioClip resolvedObj) {
         door = doorObj;
@@ -16,7 +16,7 @@ public static class GreekRomanPuzzleManager
     }
 
     public static void CheckStatus() {
-        if (leverPuzzle && mapPuzzle) {
+        if (leverPuzzle && mapPuzzle == 2) {
             if (door != null) {
                 AudioSource.PlayClipAtPoint(resolved, door.transform.position);
                 GameObject.Destroy(door);

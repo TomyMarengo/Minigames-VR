@@ -14,6 +14,7 @@ public class LeverPuzzle : MonoBehaviour
     private Status[] leversStatus;
 
     public AudioSource audioSource;
+    private bool hasInteracted = false;
 
 
     public GameObject door;
@@ -57,8 +58,10 @@ public class LeverPuzzle : MonoBehaviour
     {
         // Iterate through each lever
         GreekRomanPuzzleManager.leverPuzzle = CheckLevers();
-        if (GreekRomanPuzzleManager.leverPuzzle && !GreekRomanPuzzleManager.mapPuzzle) {
+        
+        if (!hasInteracted && GreekRomanPuzzleManager.leverPuzzle && GreekRomanPuzzleManager.mapPuzzle != 2) {
             audioSource.Play();
+            hasInteracted = true;
         }
         else {
             GreekRomanPuzzleManager.CheckStatus();

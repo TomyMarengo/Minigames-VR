@@ -20,7 +20,6 @@ public class ShowCharacter : MonoBehaviour {
     {
         initPos = character.transform;
         audioSource = GetComponent<AudioSource>();
-        Debug.Log("initPos: " + initPos + "targetPos: " + targetPos);
     }
 
 

@@ -11,18 +11,19 @@ public class RotateMap : MonoBehaviour
     private bool hasInteracted = false;
     public float rotationSnapThreshold = 10f;
     public AudioSource audioSource;
+    private bool hasReached = false;
     
     private void OnTriggerEnter(Collider other)
     {
         if (!hasInteracted && other.gameObject.tag == "Player")
         {
             transform.Rotate(rotation, 0f, 0f, Space.Self);
-            Debug.Log("ROTATING to " + transform.localRotation.eulerAngles.x.ToString());
             if ((Mathf.Abs(transform.localRotation.eulerAngles.x) % 360f) < rotationSnapThreshold)
             {
-                Debug.Log("Correct position reached");
-                GreekRomanPuzzleManager.mapPuzzle = true;
-                if (!GreekRomanPuzzleManager.leverPuzzle) {
+                GreekRomanPuzzleManager.mapPuzzle +=1;
+                hasReached = true;
+
+                if (!GreekRomanPuzzleManager.leverPuzzle || GreekRomanPuzzleManager.mapPuzzle == 1) {
                     audioSource.Play();
                 }
                 else {
@@ -32,7 +33,11 @@ public class RotateMap : MonoBehaviour
             }
             else
             {
-                GreekRomanPuzzleManager.mapPuzzle = false;
+                if (hasReached) {
+                    GreekRomanPuzzleManager.mapPuzzle -= 1;
+                    hasReached = false;
+                }
+                
             }
 
             hasInteracted = true;
