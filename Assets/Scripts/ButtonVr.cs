@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ButtonVr : MonoBehaviour
 {
 
-    [SerializeField] private float threshold = 0.1f;
+    [SerializeField] private float threshold = 0.001f;
     [SerializeField] private float deadZone = 0.05f;
     private Keypad keypad;
     public int value;
